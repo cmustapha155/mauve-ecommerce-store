@@ -11,7 +11,9 @@ class Product < ApplicationRecord
     ["category"] # singular
   end
 
+  # associations with categories and images
   belongs_to :category
+  has_one_attached :featured_image
 
   # validation required for each property, AND by property type (except strings)
   validates :name, presence: true, uniqueness: { case_sensitive: false }
