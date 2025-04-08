@@ -4,7 +4,7 @@ ActiveAdmin.register Product do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :name, :price, :description, :slug, :category_id, :featured_image
+  permit_params :name, :price, :description, :slug, :category_id, :featured_image, :remove_featured_image
   #
   # or
   #
@@ -27,11 +27,16 @@ ActiveAdmin.register Product do
       f.input :slug
       f.input :category
       f.input :featured_image, as: :file
+
+      # create an input to allow admins to remove an attached image when editing
+      if f.object.featured_image.attached?
+        f.input :remove_featured_image, as: :boolean, label: "Remove current image?"
+      end
     end
     f.actions
   end
 
-  # Add a section for the image
+# Add a section for the image
 sidebar "Featured Image", only: :show do
   if resource.featured_image.attached?
     image_tag url_for(resource.featured_image), style: "max-width: 100%; height: auto;"
@@ -39,5 +44,4 @@ sidebar "Featured Image", only: :show do
     "No image uploaded"
   end
 end
-
 end
