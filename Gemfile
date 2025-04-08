@@ -62,3 +62,4 @@ end
 gem "activeadmin"
 gem "devise"
 gem "sassc", "~> 2.4"
+gem "active_storage_validations"

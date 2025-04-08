@@ -23,6 +23,7 @@ class Product < ApplicationRecord
   validates :price, presence: true, numericality: { greater_than_or_equal_to: 0 }
   validates :description, presence: true
   validates :slug, uniqueness: { case_sensitive: false }
+  validates :featured_image, content_type: [ "image/png", "image/jpeg" ]
 
   private def generate_slug
       self.slug = name.parameterize if name.present?
