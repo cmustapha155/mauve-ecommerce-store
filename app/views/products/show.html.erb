@@ -14,7 +14,7 @@
 
 <br>
 
-<%# <%= image_tag(@product.featured_image) unless @product.featured_image == nil %> %>
+<%= image_tag(@product.featured_image) if @product.featured_image.present? %>
 
 <br>
 <%= link_to "Back", :back %>
