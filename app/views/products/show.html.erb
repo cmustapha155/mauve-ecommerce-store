@@ -1,0 +1,20 @@
+<h1>Products#show</h1>
+<p>Find me in app/views/products/show.html.erb</p>
+
+<%= link_to "Home", :controller => :home, :action => :index %>
+<br>
+
+<ul>
+  <li><%= @product.name %></li>
+  <li><%= @product.price %></li>
+  <li><%= @product.description %></li>
+  <li><%= @product.slug %></li>
+  <li><%= @product.category.name %></li>
+</ul>
+
+<br>
+
+<%# <%= image_tag(@product.featured_image) unless @product.featured_image == nil %> %>
+
+<br>
+<%= link_to "Back", :back %>

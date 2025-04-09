@@ -1,0 +1,16 @@
+<h1>Products#index</h1>
+<p>Find me in app/views/products/index.html.erb</p>
+
+<%= link_to "Home", :controller => :home, :action => :index %>
+<br>
+
+<% @products.each do |product| %>
+  <ul>
+    <li><%= product.name %></li>
+    <li><%= product.price %></li>
+    <li><%= product.description %></li>
+    <li><%= product.slug %></li>
+    <li><%= product.category.name %></li>
+    <li><%= link_to "See Product", product %></li>
+  </ul>
+<% end %>

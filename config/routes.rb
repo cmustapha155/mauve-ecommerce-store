@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # set default page to the "index" action/methods in home_controller.rb (Rails will recognize this controller as "home" as it follows the naming convention)
   root "home#index"
-
+  resources :products, only: [ :index, :show ]
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
