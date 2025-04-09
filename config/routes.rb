@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  get "home/index"
+  # set default page to the "index" action/methods in home_controller.rb (Rails will recognize this controller as "home" as it follows the naming convention)
+  root "home#index"
+
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
