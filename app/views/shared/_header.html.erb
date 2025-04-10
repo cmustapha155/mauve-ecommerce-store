@@ -6,10 +6,12 @@
   </div>
 
   <div id = "title-bar">
-    <div class = "title-text">
-      <h1>MAUVE</h1>
-      <h2>FURNISHINGS</h2>
-    </div>
+    <%= link_to root_path do %>
+      <div class = "title-text">
+        <h1>MAUVE</h1>
+        <h2>FURNISHINGS</h2>
+      </div>
+    <% end %>
 
     <div class = "search-bar">
       <label for = "search">Search</label>
