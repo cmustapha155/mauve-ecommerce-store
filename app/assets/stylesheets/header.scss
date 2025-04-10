@@ -1,0 +1,112 @@
+header {
+  border-bottom: 1.5px solid lightgrey;
+}
+
+/* TOP MESSAGE BAR */
+
+#message-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100vw;
+  height: 30px;
+  background-color: #ccc5cf;
+}
+#message-bar span {
+  font-size: 0.8em;
+  height: fit-content;
+  vertical-align: middle;
+}
+
+/* TITLE BAR*/
+
+#title-bar {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* TITLE TEXT */
+
+header .title-text {
+  margin-left: 2vw;
+  user-select: none;
+}
+header .title-text h1, h2 {
+  text-align: center;
+  letter-spacing: 3px;
+  margin: 0;
+}
+header .title-text h1 {
+  font-size: 2.5em;
+  font-weight: bolder;
+}
+header .title-text h2 {
+  font-size: 1.2em;
+  font-weight: lighter;
+  color: #cbc7c0;
+}
+
+/* SEARCH BAR */
+
+header .search-bar {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-left: 2vw;
+}
+header .search-bar label {
+  /* label present for accessibility, but unecessary for display */
+  display: none;
+}
+header .search-bar input {
+  width: 65vw;
+  height: 50%;
+
+  padding: 0 10px 0 10px;
+
+  border: 1.5px solid lightgrey;
+  border-radius: 3px;
+}
+@media (max-width: 1080px) {
+  header .search-bar input {
+    width: 50vw;
+  }
+}
+@media (max-width: 768px) {
+  header .search-bar input {
+    width: 30vw;
+  }
+}
+header .search-bar input:focus {
+  outline: none;
+  border: 1.5px solid black;
+}
+
+/* ICONS */
+
+header .icons {
+  display: flex;
+  align-items: center;
+}
+header .icons a {
+  margin-left: 2vw;
+}
+// header .icons img {
+//   width: 36px;
+// }
+// header .icons button {
+//   width: 36px;
+//   height: 36px;
+//   background-image: url(asset-path("icons/cart.png"));
+//   background-size: cover;
+
+//   background-color: transparent;
+//   border: none;
+
+//   cursor: pointer;
+// }

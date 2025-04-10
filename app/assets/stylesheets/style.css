@@ -1,0 +1,22 @@
+/* GENERAL/MISC */
+
+body, input {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+/* remove default link styling */
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+  background-color: palegoldenrod;
+}
+a:active {
+  color: inherit;
+  text-decoration: none;
+}
