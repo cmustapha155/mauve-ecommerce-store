@@ -14,7 +14,6 @@ a:visited {
 }
 a:hover {
   text-decoration: none;
-  background-color: palegoldenrod;
 }
 a:active {
   color: inherit;

@@ -1,0 +1,25 @@
+<%= stylesheet_link_tag "nav.css" %>
+
+<nav>
+  <ul>
+    <li><%= link_to "All Products", :controller => :products, :action => :index %></li>
+
+    <% @categories.each do |category| %>
+      <li><%= link_to category.name, :controller => :products, :action => :index %></li>
+    <% end %>
+
+
+
+
+  </ul>
+</nav>
+
+<%# <nav>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#resources">Resources</a></li>
+    <li><a href="#dev-setup">Developer Setup</a></li>
+  </ul>
+</nav> %>
