@@ -24,3 +24,16 @@ a:active {
 .delete {
   background-color: yellow;
 }
+.pagination {
+  width: 80%;
+  height: fit-content;
+
+  color: grey;
+  margin: 10px auto 20px auto;
+
+  vertical-align: middle;
+  border: none;
+}
+.pagination span {
+  margin: auto 5px auto 5px;
+}
