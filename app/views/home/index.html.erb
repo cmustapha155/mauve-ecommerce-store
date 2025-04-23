@@ -1,7 +1,27 @@
 <%= stylesheet_link_tag "style.css" %>
+<%= stylesheet_link_tag "home.css" %>
 <%= render "shared/header" %>
 <%= render "shared/nav" %>
 
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<%# <h1 class = "delete">Home#index</h1> %>
+<%# <p class = "delete">Find me in app/views/home/index.html.erb</p> %>
 
+<%= image_tag("hero/living-room.png", id: "hero-image") %>
+
+<div class = "container">
+  <div class = "card">
+    <h2>1.</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam expedita ut unde, quas repellat dolor fugiat optio laudantium numquam minima quo velit harum veritatis nihil nemo dolore officiis quisquam reiciendis?</p>
+  </div>
+
+  <div class = "card">
+    <h2>2.</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam expedita ut unde, quas repellat dolor fugiat optio laudantium numquam minima quo velit harum veritatis nihil nemo dolore officiis quisquam reiciendis?</p>
+  </div>
+  <div class = "card">
+    <h2>3.</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam expedita ut unde, quas repellat dolor fugiat optio laudantium numquam minima quo velit harum veritatis nihil nemo dolore officiis quisquam reiciendis?</p>
+  </div>
+</div>
+
+<%= render "shared/footer" %>
