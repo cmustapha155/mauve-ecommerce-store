@@ -16,3 +16,8 @@
 .container .card h2 {
   margin-top: 0;
 }
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
