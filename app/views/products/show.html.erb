@@ -1,24 +1,15 @@
 <%= stylesheet_link_tag "style.css" %>
+<%= stylesheet_link_tag "product.css" %>
 <%= render "shared/header" %>
 <%= render "shared/nav" %>
 
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<div class = "container">
+  <%= image_tag(@product.featured_image) if @product.featured_image.present? %>
 
-<%= link_to "Home", :controller => :home, :action => :index %>
-<br>
-
-<ul>
-  <li><%= @product.name %></li>
-  <li><%= @product.price %></li>
-  <li><%= @product.description %></li>
-  <li><%= @product.slug %></li>
-  <li><%= @product.category.name %></li>
-</ul>
-
-<br>
-
-<%= image_tag(@product.featured_image) if @product.featured_image.present? %>
-
-<br>
-<%= link_to "Back", :back %>
+  <div class = "info">
+    <h2><%= @product.name %></h2>
+    <span class = "category"><%= @product.category.name %></span>
+    <span class = "price">$<%= @product.price %></span>
+    <p><%= @product.description %></p>
+  </div>
+</div>

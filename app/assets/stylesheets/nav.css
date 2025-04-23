@@ -3,7 +3,7 @@ nav {
 
   font-size: 15px;
   color: white;
-  background-color: #7d7d7d;
+  border-bottom: 1.5px solid lightgrey;
 }
 
 nav ul {
@@ -24,14 +24,13 @@ nav ul li {
   text-align: center;
 
   margin-right: 5vw;
-  color: #EBEBEB;
-  border-bottom: 5px solid #7d7d7d;
+  color: #7d7d7d;
   transition: 200ms;
 }
 
 nav ul li:hover {
-  color: white;
-  border-bottom: 5px solid #EBEBEB;
+  color: #3f3f3f;
+  transform: translate(0px, -5px);
   cursor: pointer;
 }
 
