@@ -4,6 +4,6 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
 
     # the products, as a category knows it, is limited to the products with that category id
-    @products = Product.where(category_id: @category)
+    @products = Product.where(category_id: @category).page(params[:page]).per(9)
   end
 end
