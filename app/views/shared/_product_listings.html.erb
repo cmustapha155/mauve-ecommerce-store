@@ -7,7 +7,7 @@
     <%# turn the whole div into a button to the product, similar method as the title-home button %>
     <%= link_to product do %>
       <div class = "product">
-        <%= image_tag(product.featured_image) if product.featured_image.present? %>
+        <%= image_tag(product.featured_image, alt: "Image of #{product.name}.") if product.featured_image.present? %>
         <h3><%= product.name %></h3>
         <span class = "category"><%= product.category.name %></span>
         <span class = "price">$<%= product.price %></span>
