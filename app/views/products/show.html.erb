@@ -3,6 +3,18 @@
 <%= render "shared/header" %>
 <%= render "shared/nav" %>
 
+<div class = "breadcrumbs">
+  <ul>
+    <li><%= link_to "Home", root_path %></li>
+    <li class = "no-select">/</li>
+    <li><%= link_to "Products", :controller => :products, :action => :index %></li>
+    <li class = "no-select">/</li>
+    <li><%= link_to @product.category.name, @product.category %></li>
+    <li class = "no-select">/</li>
+    <li class = "location no-select"><%= @product.name %></li>
+  </ul>
+</div>
+
 <div class = "container">
   <%= image_tag(@product.featured_image, alt: "Image of #{@product.name}") if @product.featured_image.present? %>
 

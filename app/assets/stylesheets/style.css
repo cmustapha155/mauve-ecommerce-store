@@ -37,3 +37,25 @@ a:active {
 .pagination span {
   margin: auto 5px auto 5px;
 }
+.breadcrumbs ul {
+  display: flex;
+  list-style-type: none;
+}
+.breadcrumbs ul li {
+  margin-right: 15px;
+}
+@media (max-width: 768px) {
+  .breadcrumbs ul li {
+    margin-right: 8px;
+  }
+}
+.breadcrumbs ul li:hover :not(.no-select) {
+  text-decoration: underline;
+}
+.breadcrumbs .location {
+  color: grey;
+  text-decoration: none;
+}
+.breadcrumbs .no-select {
+  user-select: none;
+}

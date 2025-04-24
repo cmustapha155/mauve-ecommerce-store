@@ -2,6 +2,16 @@
 <%= render "shared/header" %>
 <%= render "shared/nav" %>
 
+<div class = "breadcrumbs">
+  <ul>
+    <li><%= link_to "Home", root_path %></li>
+    <li class = "no-select">/</li>
+    <li><%= link_to "Products", :controller => :products, :action => :index %></li>
+    <li class = "no-select">/</li>
+    <li class = "location no-select"><%= @category.name %></li>
+  </ul>
+</div>
+
 <h2 style = "text-align: center;"><%= @category.name %></h2>
 
 <%= render "shared/product_listings" %>
