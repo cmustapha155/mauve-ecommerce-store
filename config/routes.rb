@@ -1,17 +1,14 @@
 Rails.application.routes.draw do
-  get "carts/show"
-  get "carts/add"
-  get "carts/update"
-  get "carts/remove"
   # set default page to the "index" action/methods in home_controller.rb (Rails will recognize this controller as "home" as it follows the naming convention)
   root "home#index"
   resources :products, only: [ :index, :show ]
   resources :categories, only: [ :show ]
 
   resource :cart, only: [ :show ] do
-    post "products/add_to cart/:product_id", to: "carts#add_to_cart", as: "add_to"
-    # delete "products/remove_from_cart/:product_id", to: "carts#remove_from_cart", as: "remove_from"
-    # patch "update/:product_id", to: "carts#update", as: "update_item"
+    # url TO: controller#action AS: helper_method_name
+    post "products/add_to_cart/:product_id", to: "carts#add", as: "add_to"
+    patch "update/:product_id", to: "carts#update", as: "update"
+    delete "products/remove_from_cart/:product_id", to: "carts#remove", as: "remove_from"
   end
 
   devise_for :admin_users, ActiveAdmin::Devise.config

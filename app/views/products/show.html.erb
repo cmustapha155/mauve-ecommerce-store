@@ -23,6 +23,11 @@
     <span class = "category"><%= @product.category.name %></span>
     <span class = "price">$<%= @product.price %></span>
     <p><%= @product.description %></p>
+
+    <%= form_with url: add_to_cart_path(@product.id), method: :post, local: true do %>
+      <%= number_field_tag :quantity, 1, min: 1 %>
+      <%= submit_tag "Add to Cart" %>
+    <% end %>
   </div>
 </div>
 
