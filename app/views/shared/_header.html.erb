@@ -18,7 +18,8 @@
       <%# <input id = "search" type = text placeholder = "Search"> %>
 
       <%= form_tag search_results_path, method: "get" do %>
-        <%= text_field_tag :q %>
+        <%= text_field_tag :q, params[:q], placeholder: "Search for products..." %>
+        <%= select_tag :category_id, options_from_collection_for_select(Category.all, :id, :name, params[:category_id]), prompt: "All Categories" %>
         <%= submit_tag "Search" %>
       <% end%>
     </div>

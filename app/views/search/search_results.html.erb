@@ -3,8 +3,6 @@
 <%= render "shared/header" %>
 <%= render "shared/nav" %>
 
-<span class = "delete">search results go here</span>
-
 <h2 style = "text-align: center">Search Results for "<%= params[:q] %>"</h2>
 
 <% if @products.empty? || @keywords.blank? %>
