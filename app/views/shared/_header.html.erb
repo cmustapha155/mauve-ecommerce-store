@@ -14,8 +14,13 @@
     <% end %>
 
     <div class = "search-bar">
-      <label for = "search">Search</label>
-      <input id = "search" type = text placeholder = "Search">
+      <%# <label for = "search">Search</label> %>
+      <%# <input id = "search" type = text placeholder = "Search"> %>
+
+      <%= form_tag search_results_path, method: "get" do %>
+        <%= text_field_tag :q %>
+        <%= submit_tag "Search" %>
+      <% end%>
     </div>
 
     <div class = "icons">

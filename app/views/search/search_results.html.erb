@@ -1,0 +1,16 @@
+<%= stylesheet_link_tag "style.css" %>
+<%= stylesheet_link_tag "product.css" %>
+<%= render "shared/header" %>
+<%= render "shared/nav" %>
+
+<span class = "delete">search results go here</span>
+
+<h2 style = "text-align: center">Search Results for "<%= params[:q] %>"</h2>
+
+<% if @products.empty? || @keywords.blank? %>
+  <h3>No results found.</h3>
+<% else %>
+  <%= render "shared/product_listings" %>
+<% end
+%>
+<%= render "shared/footer" %>
