@@ -1,0 +1,44 @@
+<%= stylesheet_link_tag "style.css" %>
+<%= stylesheet_link_tag "cart.css" %>
+<%= render "shared/header" %>
+<%= render "shared/nav" %>
+
+<h2 style = "text-align: center;">Your Cart</h2>
+
+<% if @cart_items.empty? %>
+  <h3 style = "text-align: center;">Your cart is empty.</h3>
+<% else %>
+  <div class = "container">
+    <div class = "cart-items">
+      <% @cart_items.each do |item| %>
+        <div class = "item">
+          <%= image_tag(item[:product].featured_image, alt: "Image of #{item[:product].name}.") if item[:product].featured_image.present? %>
+
+          <div>
+            <h3><%= link_to item[:product].name, item[:product] %></h3>
+            <span class = "category"><%= item[:product].category.name %></span>
+            <span class = "price">$<%= item[:product].price %> each</span>
+
+            <div class ="edit">
+              <%= form_with url: update_cart_path(item[:product].id), method: :patch, local: true do %>
+                <%= number_field_tag :quantity, item[:quantity], min: 1, class: "quantity", id: nil %>
+                <%= submit_tag "Update", class: "button" %>
+              <% end %>
+
+              <%= button_to "Remove", remove_from_cart_path(item[:product].id), method: :delete, class: "button" %>
+            </div>
+          </div>
+
+          <span class = "price"><%= number_to_currency(item[:subtotal]) %></span>
+        </div>
+      <% end %>
+    </div>
+
+    <div class = "subtotal">
+      <h3>Subtotal: <%= @total_price %></h3>
+    </div>
+  </div>
+
+<% end %>
+
+<%= render "shared/footer" %>

@@ -26,7 +26,30 @@ span {
 .info .price {
   font-weight: bold;
 }
+/* .info .edit {
+  display: flex;
+} */
+.info .quantity {
+  width: 50px;
+  height: 30px;
+  padding: 0 10px 0 10px;
 
+  border: 1.5px solid lightgrey;
+  border-radius: 3px;
+}
+.info .quantity:focus {
+  outline: none;
+  border: 1.5px solid black;
+}
+.info .button {
+  /* width: 71px; */
+  height: 31px;
+  padding: 0 10px 0 10px;
+  margin: auto 5px auto 5px;
+  border: 1.5px solid lightgrey;
+  border-radius: 3px;
+  cursor: pointer;
+}
 
 @media (max-width: 768px) {
   .container {
