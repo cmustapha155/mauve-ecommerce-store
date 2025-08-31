@@ -13,9 +13,22 @@
 .container .card {
   padding: 20px;
 }
-.container .card h2 {
-  margin-top: 0;
+
+.card {
+  text-align: justify;
 }
+.card svg {
+  display: flex;
+  justify-self: center;
+
+  width: 30%;
+  color: rgb(203, 199, 192);
+}
+.card p {
+  line-height: 140%;
+}
+
+
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
