@@ -1,0 +1,31 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  customer: one
+  status: MyString
+  subtotal: 9.99
+  provincial_sales_tax: 9.99
+  general_sales_tax: 9.99
+  total_price: 9.99
+  email: MyString
+  address: MyString
+  apartment_number: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  country: MyString
+
+two:
+  customer: two
+  status: MyString
+  subtotal: 9.99
+  provincial_sales_tax: 9.99
+  general_sales_tax: 9.99
+  total_price: 9.99
+  email: MyString
+  address: MyString
+  apartment_number: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  country: MyString
