@@ -2,6 +2,8 @@
   padding: 20px;
   margin: 40px;
   background-color: lightgrey;
+  display: flex;
+  gap: 20px;
 }
 
 .cart-items {
@@ -27,7 +29,7 @@
   max-height: 100%;
   object-fit: contain;
 }
-.item h3 {
+.item h3, .summary h3{
   margin: 0;
 }
 .item h3:hover {
@@ -64,6 +66,29 @@
   height: 31px;
   padding: 0 10px 0 10px;
   margin: auto 5px auto 5px;
+
+  border: 1.5px solid lightgrey;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.summary {
+  display: flex;
+  flex-direction: column;
+
+  flex: 1; /* Occupy remaining container space */
+  height: 200px;
+  padding: 30px;
+
+  background-color: white;
+  border: 1.5px solid lightgrey;
+  border-radius: 3px;
+}
+.summary .button {
+  height: 31px;
+  padding: 0 10px 0 10px;
+  margin: auto 5px auto 5px;
+
   border: 1.5px solid lightgrey;
   border-radius: 3px;
   cursor: pointer;
@@ -73,5 +98,8 @@
 @media (max-width: 768px) {
   .cart-items {
     width: 100%;
+  }
+  .container {
+    flex-direction: column;
   }
 }

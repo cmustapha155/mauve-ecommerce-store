@@ -10,7 +10,9 @@
 <% else %>
   <div class = "container">
     <div class = "cart-items">
+    <% item_count = 0 %>
       <% @cart_items.each do |item| %>
+        <% item_count += 1 %>
         <div class = "item">
           <%= image_tag(item[:product].featured_image, alt: "Image of #{item[:product].name}.") if item[:product].featured_image.present? %>
 
@@ -28,14 +30,16 @@
               <%= button_to "Remove", remove_from_cart_path(item[:product].id), method: :delete, class: "button" %>
             </div>
           </div>
-
-          <span class = "price"><%= number_to_currency(item[:subtotal]) %></span>
         </div>
       <% end %>
     </div>
 
-    <div class = "subtotal">
-      <h3>Subtotal: <%= @total_price %></h3>
+    <div class="summary">
+      <h3>Summary (<%= item_count %> Items)</h3>
+
+      <p>Subtotal: <b>$<%= @total_price %></b></p>
+
+      <button class="button">Proceed to Checkout</button>
     </div>
   </div>
 
