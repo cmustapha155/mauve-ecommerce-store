@@ -12,7 +12,7 @@ class Category < ApplicationRecord
 
   # allowlist association as searchable for activeadmin (allow access to associated product info from here)
   def self.ransackable_associations(auth_object = nil)
-    ["products"] # plural
+    [ "products" ] # plural
   end
 
   has_many :products
