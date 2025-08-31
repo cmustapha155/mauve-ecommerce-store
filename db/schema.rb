@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_08_31_223335) do
+ActiveRecord::Schema[7.2].define(version: 2025_08_31_225408) do
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
@@ -92,6 +92,25 @@ ActiveRecord::Schema[7.2].define(version: 2025_08_31_223335) do
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.integer "customer_id"
+    t.string "status"
+    t.decimal "subtotal"
+    t.decimal "provincial_sales_tax"
+    t.decimal "general_sales_tax"
+    t.decimal "total_price"
+    t.string "email"
+    t.string "address"
+    t.string "apartment_number"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
+    t.string "country"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["customer_id"], name: "index_orders_on_customer_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.decimal "price"
@@ -105,5 +124,6 @@ ActiveRecord::Schema[7.2].define(version: 2025_08_31_223335) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "orders", "customers"
   add_foreign_key "products", "categories"
 end
