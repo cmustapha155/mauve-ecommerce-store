@@ -16,7 +16,7 @@
         <div class = "item">
           <%= image_tag(item[:product].featured_image, alt: "Image of #{item[:product].name}.") if item[:product].featured_image.present? %>
 
-          <div>
+          <div class="details">
             <h3><%= link_to item[:product].name, item[:product] %></h3>
             <span class = "category"><%= item[:product].category.name %></span>
             <span class = "price">$<%= item[:product].price %> each</span>

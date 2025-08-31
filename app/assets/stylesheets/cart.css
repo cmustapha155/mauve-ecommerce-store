@@ -1,27 +1,36 @@
 .container {
   padding: 20px;
-  margin: 40px;
-  background-color: lightgrey;
+  margin: 0 auto 20px auto;
+  width: 80%;
+
+  background-color: #ebeded;
   display: flex;
   gap: 20px;
 }
 
 .cart-items {
   width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .item {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   height: 200px;
+  gap:  30px;
 
   padding: 30px;
-  margin-bottom: 20px;
 
   background-color: white;
   border: 1.5px solid lightgrey;
   border-radius: 3px;
+}
+.item .details {
+  /* background-color: red; */
+  flex: 1;
+  text-align: left;
 }
 .item img {
   width: 30%;
