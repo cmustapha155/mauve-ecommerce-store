@@ -24,8 +24,15 @@ class CartsController < ApplicationController
     @cart[product_id] ||= 0
     @cart[product_id] += quantity
 
-    save_cart
-    redirect_to cart_path, notice: "Added #{quantity} item(s) to cart."
+    if save_cart
+      flash[:success] = "Item added to cart."
+    else
+      flash[:error] = "Unable to add item to cart"
+    end
+
+    redirect_back fallback_location: products_path
+
+    # redirect_to cart_path, notice: "Added #{quantity} item(s) to cart."
   end
 
   def update

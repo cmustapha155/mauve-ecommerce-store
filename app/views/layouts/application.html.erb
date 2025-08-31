@@ -21,6 +21,13 @@
   <body>
     <%= yield %>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <% flash.each do |type, message| %>
+      <script>alert("<%= j message %>");</script>
+    <% end %>
+
     <%# required in activeadmin manual setup %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
