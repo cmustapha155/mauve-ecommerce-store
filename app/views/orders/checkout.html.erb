@@ -25,11 +25,6 @@
     </div>
 
 
-
-
-
-
-
     <%= form_with url: orders_path, html: { class: "checkout-form" }, method: :post do |f| %>
       <div>
         <label for="email">Email:</label>
@@ -52,8 +47,6 @@
       </div>
 
       <div>
-        <%# <label for="state">State/Province:</label> %>
-        <%# <%= text_field_tag :state, @order.state, required: true %>
 
         <%= f.label :state, "Province/Territory" %>
         <%= f.select :state, [
@@ -68,8 +61,6 @@
       </div>
 
       <div>
-        <%# <label for="country">Country:</label>
-        <%= text_field_tag :country, @order.country, required: true %> %>
 
         <%= f.label :country, "Country" %>
         <%= f.select :country, ["Canada"], { prompt: "Select Country" }, class: "input-field", required: true %>

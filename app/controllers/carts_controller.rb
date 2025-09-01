@@ -23,7 +23,6 @@ class CartsController < ApplicationController
 
     @cart[product_id] ||= 0
     @cart[product_id] += quantity
-
     if save_cart
       flash[:success] = "Item added to cart."
     else
