@@ -97,7 +97,7 @@ class OrdersController < ApplicationController
       state: params[:state],
       zip: params[:zip],
       country: params[:country],
-      status: "pending"
+      status: "new"
     )
 
     # Build OrderItems from session cart
