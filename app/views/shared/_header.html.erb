@@ -25,7 +25,16 @@
     </div>
 
     <div class = "icons">
-      <%= link_to "Account" %>
+      <% if customer_signed_in? %>
+        <%= button_to "Sign_out", destroy_customer_session_path, :method => 'delete', data:{turbo: "false"}%>
+        <%= link_to "Account", edit_customer_registration_path %>
+      <% else %>
+        <%= link_to "Sign Up", new_customer_registration_path %>
+        <%= link_to "Login", new_customer_session_path %>
+      <% end %>
+
+
+      <%# <%= link_to "Account" %>
       <%= link_to "Cart", cart_path %>
     </div>
   </div>

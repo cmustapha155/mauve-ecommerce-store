@@ -28,7 +28,6 @@ Rails.application.routes.draw do
   get "search" => "search#search_results", as: "search_results"
 
   # Enable devise routes for customers, which generates sign up/sign in tools automatically
-  # devise_for :customers
 
   resources :orders, only: [ :create, :show ]
 
