@@ -38,6 +38,7 @@
       <div>
         <h3>Summary (<%= item_count %> Items)</h3>
         <p>Subtotal: <b>$<%= @total_price %></b></p>
+        <p><i>Taxes calculated at checkout</i></p>
       </div>
 
       <%= button_to "Proceed to Checkout", checkout_path, method: :get, class: "button" %>

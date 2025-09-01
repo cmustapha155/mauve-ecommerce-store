@@ -19,6 +19,9 @@
     <div class="summary">
       <h3>Summary (<%= item_count %> Items)</h3>
       <p>Subtotal: <b>$<%= @total_price %></b></p>
+      <p>Estimated GST/HST:</p>
+      <p>Estimated PST/RST/QST:</p>
+      Order Total:</p>
     </div>
 
 
@@ -27,7 +30,7 @@
 
 
 
-    <%= form_with url: orders_path, html: { class: "checkout-form" }, method: :post do %>
+    <%= form_with url: orders_path, html: { class: "checkout-form" }, method: :post do |f| %>
       <div>
         <label for="email">Email:</label>
         <%= text_field_tag :email, @order.email, required: true %>
@@ -49,8 +52,14 @@
       </div>
 
       <div>
-        <label for="state">State/Province:</label>
-        <%= text_field_tag :state, @order.state, required: true %>
+        <%# <label for="state">State/Province:</label> %>
+        <%# <%= text_field_tag :state, @order.state, required: true %>
+
+        <%= f.label :state, "Province/Territory" %>
+        <%= f.select :state, [
+              "AB", "BC", "MB", "NB", "NL", "NS", "NT", "NU",
+              "ON", "PE", "QC", "SK", "YT"
+            ], { prompt: "Select Province/Territory" }, class: "input-field", required: true %>
       </div>
 
       <div>
@@ -59,8 +68,11 @@
       </div>
 
       <div>
-        <label for="country">Country:</label>
-        <%= text_field_tag :country, @order.country, required: true %>
+        <%# <label for="country">Country:</label>
+        <%= text_field_tag :country, @order.country, required: true %> %>
+
+        <%= f.label :country, "Country" %>
+        <%= f.select :country, ["Canada"], { prompt: "Select Country" }, class: "input-field", required: true %>
       </div>
 
       <div>
