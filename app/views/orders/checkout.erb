@@ -1,0 +1,23 @@
+<%= stylesheet_link_tag "style.css" %>
+<%= stylesheet_link_tag "cart.css" %>
+<%= render "shared/header" %>
+<%= render "shared/nav" %>
+
+<h2 style = "text-align: center;">Checkout Details</h2>
+
+<!-- cart page -->
+<%= form_with url: orders_path, method: :post do %>
+  <div>
+    <label>Email:</label>
+    <%= text_field_tag :email %>
+  </div>
+  <div>
+    <label>Address:</label>
+    <%= text_field_tag :address %>
+  </div>
+  <!-- optionally apartment, city, state, zip, country fields -->
+
+  <%= submit_tag "Proceed to Checkout" %>
+<% end %>
+
+<%= render "shared/footer" %>

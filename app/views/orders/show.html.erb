@@ -1,0 +1,52 @@
+<h1>Order Confirmation</h1>
+
+<p>
+  <strong>Order ID:</strong>
+  <%= @order.id %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @order.status %>
+</p>
+
+<p>
+  <strong>Customer Email:</strong>
+  <%= @order.email %>
+</p>
+
+<p>
+  <strong>Shipping Address:</strong><br>
+  <%= @order.address %>
+  <% if @order.apartment_number.present? %> #<%= @order.apartment_number %><% end %><br>
+  <%= @order.city %>, <%= @order.state %> <%= @order.zip %><br>
+  <%= @order.country %>
+</p>
+
+<h2>Items</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Subtotal</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @order.order_items.each do |item| %>
+      <tr>
+        <td><%= item.product.name if item.product %></td>
+        <td><%= item.quantity %></td>
+        <td><%= number_to_currency(item.price) %></td>
+        <td><%= number_to_currency(item.price * item.quantity) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h3>Totals</h3>
+<p>Subtotal: <%= number_to_currency(@order.subtotal) %></p>
+<p>Provincial Tax: <%= number_to_currency(@order.provincial_sales_tax) %></p>
+<p>General Tax: <%= number_to_currency(@order.general_sales_tax) %></p>
+<p>Total: <%= number_to_currency(@order.total_price) %></p>

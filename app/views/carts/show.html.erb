@@ -39,7 +39,8 @@
 
       <p>Subtotal: <b>$<%= @total_price %></b></p>
 
-      <button class="button">Proceed to Checkout</button>
+      <%= link_to "Proceed to Checkout", checkout_path, class: "button" %>
+      <%# <button class="button">Proceed to Checkout</button> %>
     </div>
   </div>
 
