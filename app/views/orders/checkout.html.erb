@@ -18,10 +18,13 @@
 
     <div class="summary">
       <h3>Summary (<%= item_count %> Items)</h3>
+
       <p>Subtotal: <b>$<%= @total_price %></b></p>
-      <p>Estimated GST/HST:</p>
-      <p>Estimated PST/RST/QST:</p>
-      Order Total:</p>
+      <p>GST/HST: --</p>
+      <p>PST/RST/QST: --</p>
+      <p>Order Total: --</p>
+
+      <p><i>Proceed to calculate taxes</i></p>
     </div>
 
 
@@ -67,7 +70,7 @@
       </div>
 
       <div>
-        <%= submit_tag "Place Order", class: "button" %>
+        <%= submit_tag "Review Order", class: "button" %>
       </div>
     <% end %>
 
